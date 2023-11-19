@@ -2,7 +2,7 @@ import mysql.connector
 from datetime import date
 from scapy.layers.l2 import ARP, Ether
 from scapy.sendrecv import srp
-G
+
 def scan(ip, iface):
     arp_request = ARP(pdst=ip)
     ether = Ether(dst="ff:ff:ff:ff:ff:ff")
