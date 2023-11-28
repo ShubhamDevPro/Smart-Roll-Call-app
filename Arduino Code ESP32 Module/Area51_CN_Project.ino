@@ -17,10 +17,13 @@ int linearSearch(const std::string arr[], int size, const std::string& target) {
     }
     return -1; // Return -1 if the target is not found
 }
+
+// BA:7D:01:00:9C:4C Avani Mac
+// C6:E9:14:B5:BB:3C Naveen Mac
 const int No_of_Students = 8;
-    std::string Mac_Address_List[No_of_Students] = {"apple", "76:2F:0E:C6:C3:5D", "76:65:CD:ED:25:15", "date", "elderberry", "fig", "grape", "B0:68:E6:2A:FC:D7"};
-    std::string Roll_No[No_of_Students] = {"apple", "01919011722", "01819011722", "date", "elderberry", "fig", "grape", "10519011722"};
-    std::string Name[No_of_Students] = {"apple", "Shubham Dev", "Anamika", "date", "elderberry", "fig", "grape", "HP_Laptop"};
+    std::string Mac_Address_List[No_of_Students] = {"C6:E9:14:B5:BB:3C", "76:2F:0E:C6:C3:5D", "BA:7D:01:00:9C:4C"};
+    std::string Roll_No[No_of_Students] = {"10519011722", "01919011722", "09619011722"};
+    std::string Name[No_of_Students] = {"Naveen Sharma", "Shubham Dev", "Avani Jain"};
 
 
 // For hotspot
@@ -31,8 +34,8 @@ const bool hide_SSID = false;
 const int max_connection = 20;
 
 // For connection to Home WiFi (for internet)
-const char* wifi_network_ssid = "Bitto";
-const char* wifi_network_password = "9278348561";
+const char* wifi_network_ssid = "GGSIPU_EDC_STUDENT";
+const char* wifi_network_password = NULL;
 
 struct ConnectedDevice {
   uint8_t mac[6];
