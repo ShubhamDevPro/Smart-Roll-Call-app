@@ -21,9 +21,9 @@ int linearSearch(const std::string arr[], int size, const std::string& target) {
 // BA:7D:01:00:9C:4C Avani Mac
 // C6:E9:14:B5:BB:3C Naveen Mac
 const int No_of_Students = 8;
-    std::string Mac_Address_List[No_of_Students] = {"C6:E9:14:B5:BB:3C", "76:2F:0E:C6:C3:5D", "BA:7D:01:00:9C:4C","D8:A3:15:3B:7E:C3","22:82:97:B0:47:C2"};
-    std::string Roll_No[No_of_Students] = {"10519011722", "01919011722", "09619011722","01819011722","08919011722"};
-    std::string Name[No_of_Students] = {"Naveen Sharma", "Shubham Dev", "Avani Jain","Karan Bhatia","Deepak Kumar"};
+    std::string Mac_Address_List[No_of_Students] = {"C6:E9:14:B5:BB:3C", "76:2F:0E:C6:C3:5D", "BA:7D:01:00:9C:4C","D8:A3:15:3B:7E:C3","22:82:97:B0:47:C2","E2:0E:74:E7:23:EF"};
+    std::string Roll_No[No_of_Students] = {"10519011722", "01919011722", "09619011722","01819011722","08919011722","03019011722"};
+    std::string Name[No_of_Students] = {"Naveen Sharma", "Shubham Dev", "Avani Jain","Karan Bhatia","Deepak Kumar","Chaitanya Gupta"};
 
 
 // For hotspot
