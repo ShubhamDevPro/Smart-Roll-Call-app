@@ -31,13 +31,11 @@ To set up and use the Smart Roll Call App, you'll need the following:
 
 * **Hardware:**
     * ESP32 microcontroller
-    * Additional components (resistors, capacitors, etc.) as per your specific hardware configuration
 * **Software:**
     * Arduino IDE (or compatible IDE for ESP32 programming)
     * IFTTT account
     * Google Sheets account
 
-**Detailed setup instructions** (including hardware connection diagrams, code examples, and IFTTT applet configuration steps) will be provided in a separate document ([link to setup document or dedicated section within README if applicable]).
 
 ## Contributing
 
@@ -49,4 +47,4 @@ This project is licensed under the [License Name] license ([link to license deta
 
 ## Contact
 
-For any questions or feedback about the Smart Roll Call App, please feel free to reach out to [your contact information (email, GitHub username)].
+For any questions or feedback about the Smart Roll Call App, please feel free to reach out to shubham.01919011722@ipu.ac.in
