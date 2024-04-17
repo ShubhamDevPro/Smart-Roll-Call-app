@@ -43,7 +43,7 @@ We welcome contributions to this project! If you have improvements or suggestion
 
 ## License
 
-This project is licensed under the [License Name] license ([link to license details]).
+This project is licensed under the MIT license.
 
 ## Contact
 
