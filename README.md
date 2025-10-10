@@ -40,6 +40,30 @@ This ESP32 system automatically marks student attendance based on:
 - **USB Cable** for programming
 - **Power Supply** (5V USB or battery pack)
 
+## ⚙️ Configuration Setup
+
+### **IMPORTANT: First Time Setup**
+
+Before uploading the code to your ESP32, you MUST configure your credentials:
+
+1. **Copy the example configuration file:**
+   ```bash
+   cp include/config.example.h include/config.h
+   ```
+
+2. **Edit `include/config.h`** with your actual credentials:
+   - Firebase Project ID
+   - Firebase API Key
+   - Firebase User ID (get from Firebase Console → Authentication)
+   - WiFi SSID and Password (your home WiFi for internet)
+   - Hotspot SSID and Password (for students to connect)
+
+3. **NEVER commit `include/config.h`** to Git - it's already in `.gitignore`
+
+4. **Upload to ESP32** after configuration
+
+> 🔒 **Security Note:** The `config.h` file contains sensitive credentials and is excluded from Git. Only `config.example.h` (with placeholder values) is committed to the repository.
+
 ## 📦 Required Libraries
 
 Install these libraries via Arduino IDE Library Manager:
@@ -103,10 +127,10 @@ const char* FIREBASE_USER_ID = "YOUR_USER_ID_HERE";
 
 // Update WiFi credentials if needed
 const char* AP_SSID = "Everyday I'm buffering";
-const char* AP_PASSWORD = "area51project";
+const char* AP_PASSWORD = "Pass123";
 
-const char* WIFI_SSID = "Bitto";
-const char* WIFI_PASSWORD = "9278348561";
+const char* WIFI_SSID = "Shubham";
+const char* WIFI_PASSWORD = "Pass123";
 ```
 
 ### Step 5: Upload to ESP32

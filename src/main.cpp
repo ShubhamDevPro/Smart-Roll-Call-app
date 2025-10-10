@@ -55,73 +55,41 @@
 #include "esp_netif.h"
 #include <vector>
 #include "esp_pm.h"
+#include "config.h"  // Include configuration file with credentials
 
 #define LED_BUILTIN 2
 
 // ==================== CONFIGURATION ====================
 
 /*
- * FIREBASE CONFIGURATION
+ * CONFIGURATION NOTE:
  * 
- * The ESP32 needs to query your Firestore database to:
- * 1. Load class schedules for today
- * 2. Find students by MAC address
- * 3. Mark attendance records
+ * All sensitive credentials are now stored in include/config.h
+ * This file is NOT committed to Git (.gitignore)
  * 
- * Your Firestore structure is:
- * users/{userId}/batches/{batchId}/
- *   - schedules/{scheduleId}      <- Class time schedules
- *   - students/{studentId}         <- Student info with MAC addresses
- * attendance_records/{recordId}    <- Where attendance is stored
+ * To set up your credentials:
+ * 1. Copy include/config.example.h to include/config.h
+ * 2. Edit include/config.h with your actual credentials
+ * 3. Upload to ESP32
  * 
- * The FIREBASE_USER_ID must match the userId in your Firestore path!
+ * Configuration values defined in config.h:
+ * - FIREBASE_PROJECT_ID
+ * - FIREBASE_API_KEY
+ * - FIREBASE_USER_ID
+ * - AP_SSID (Hotspot name)
+ * - AP_PASSWORD (Hotspot password)
+ * - AP_CHANNEL
+ * - HIDE_SSID
+ * - MAX_CONNECTIONS
+ * - WIFI_SSID (Home WiFi)
+ * - WIFI_PASSWORD (Home WiFi)
+ * - NTP_SERVER
+ * - GMT_OFFSET_SEC
+ * - DAYLIGHT_OFFSET_SEC
+ * - DEVICE_CHECK_INTERVAL
+ * - SCHEDULE_REFRESH_INTERVAL
+ * - TIME_SYNC_INTERVAL
  */
-
-// Firebase Configuration
-const char* FIREBASE_PROJECT_ID = "smart-roll-call-76a46";
-const char* FIREBASE_API_KEY = "AIzaSyB_MD4YFnfHyuXIUFMBCPl9M6-u1OIYK5g";
-
-// ⚠️ CRITICAL: Replace "YOUR_USER_ID_HERE" with your actual Firebase Auth User ID
-// 
-// How to find your User ID:
-// Method 1 - Firebase Console:
-//   1. Go to https://console.firebase.google.com
-//   2. Select your project "smart-roll-call-76a46"
-//   3. Navigate to Authentication -> Users
-//   4. Copy the "User UID" (looks like: a1b2c3d4e5f6g7h8...)
-//
-// Method 2 - Flutter App Debug:
-//   1. In your Flutter app, add this after login:
-//      print('User ID: ${FirebaseAuth.instance.currentUser?.uid}');
-//   2. Run the app and copy the printed UID from console
-//
-// Method 3 - Check Firestore:
-//   1. Go to Firestore Database in Firebase Console
-//   2. Look under the "users" collection
-//   3. The document ID is your User ID
-//
-const char* FIREBASE_USER_ID = "gIi2otSEGRU8KVbuNt5lO85ckPs2";
-
-// Hotspot Configuration
-const char* AP_SSID = "Everyday I'm buffering";
-const char* AP_PASSWORD = "area51project";
-const int AP_CHANNEL = 10;
-const bool HIDE_SSID = false;
-const int MAX_CONNECTIONS = 4;
-
-// Home WiFi Configuration (for internet access)
-const char* WIFI_SSID = "Bitto";
-const char* WIFI_PASSWORD = "9278348561";
-
-// NTP Server Configuration for time sync
-const char* NTP_SERVER = "pool.ntp.org";
-const long GMT_OFFSET_SEC = 19800;  // GMT+5:30 for India (5.5 hours * 3600)
-const int DAYLIGHT_OFFSET_SEC = 0;
-
-// Timing Configuration
-const unsigned long DEVICE_CHECK_INTERVAL = 5000;    // Check for new devices every 5 seconds
-const unsigned long SCHEDULE_REFRESH_INTERVAL = 300000; // Refresh schedules every 5 minutes
-const unsigned long TIME_SYNC_INTERVAL = 3600000;    // Sync time every hour
 
 // ==================== STRUCTURES ====================
 

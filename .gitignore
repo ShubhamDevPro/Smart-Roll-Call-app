@@ -3,3 +3,7 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Configuration file with sensitive credentials
+# DO NOT commit this file - it contains API keys and passwords
+include/config.h
